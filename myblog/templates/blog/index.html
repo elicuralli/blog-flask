@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+{% block header %}
+
+<h2>{% block title %}Publicaciones{%endblock%}</h2>
+
+{%endblock%}
+
+{% block content %}
+
+{% for post in posts %}
+<article>
+        <h1>{{ post.title }}</h1>
+    <div>
+        <p>{{ post.body }}</p>
+    </div>
+</article>
+{%endfor%}
+
+{%endblock%}
