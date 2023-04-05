@@ -13,10 +13,6 @@ class ProductionConfig(Config):
 
 class DevelopmentConfig(Config):
     SECRET_KEY = 'gatico'
-    DEBUG = True
-    TESTING = True
-
-
 
 
 

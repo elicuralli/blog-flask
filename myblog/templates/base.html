@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static',filename='img/blog.ico') }}" type="image/x-icon">
     <title>{% block title %}{% endblock %}MyBlog</title>
 </head>
 <body>
     <header>
         
         <div>
-            <a href="">
+            <a href="{{url_for('blog.index')}}">
                 <h1>MyBlog</h1>
             </a>
         </div>
         <nav>
-            <a href="">Registrar usuario</a>
-            <a href="">Iniciar sesion</a>
+            {% if g.user %}
+          <samp>  {{ g.user.username }} </samp>
+            <a href="{{url_for('auth.logout')}}">Cerrar sesion</a>
+            {% else %}
+            <a href="{{url_for('auth.register')}}">Registrar usuario</a>
+            <a href="{{url_for('auth.login')}}">Iniciar sesion</a>
+            {% endif %}
         </nav>
         <section>
             <header>{% block header %}{% endblock %}</header>

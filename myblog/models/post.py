@@ -10,14 +10,13 @@ class Post(db.Model):
     created = db.Column(db.DateTime, nullable = False, default = datetime.utcnow) #esto es una libreria para generar fechas automaticas 
 
 
-
-    def __init__(self, author,tittle,body) -> None:
+    def __init__(self, author,title,body) -> None:
         self.author = author
         self.body = body
-        self.tittle = tittle
+        self.title = title
     
     def __repr__(self) -> str:
-        return f'Post: {self.tittle}'
+        return f'Post: {self.title}'
 
 
         

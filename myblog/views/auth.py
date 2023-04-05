@@ -5,7 +5,7 @@ from myblog import db
 import functools
 
 
-auth = Blueprint('auth',__name__,url_prefix='/auth') #registrar vistas de la app 
+auth = Blueprint('auth',__name__) #registrar vistas de la app 
 
 #registrar un usuario
 
