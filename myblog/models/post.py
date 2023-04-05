@@ -6,7 +6,7 @@ class Post(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     author = db.Column(db.Integer, db.ForeignKey('users.id'), nullable = False)
     title = db.Column(db.String(50))
-    body = db.Column(db.Text(50))
+    body = db.Column(db.Text)
     created = db.Column(db.DateTime, nullable = False, default = datetime.utcnow) #esto es una libreria para generar fechas automaticas 
 
 
